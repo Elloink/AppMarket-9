@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.mapleaf.mobilesafe.SoftManageActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8866ff00"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="软件管理"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="手机内存：200MB"
+        android:id="@+id/tv_softmanage_rom"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_softmanage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+        <ProgressBar
+            android:id="@+id/pb_softmanage"
+            android:indeterminateDrawable="@drawable/anim_drawable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</LinearLayout>

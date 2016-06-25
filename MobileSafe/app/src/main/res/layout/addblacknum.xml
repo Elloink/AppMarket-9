@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8866ff00"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="添加黑名单"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+    <EditText
+        android:id="@+id/et_addblacknum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入黑名单号码"
+        android:inputType="phone"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:id="@+id/rg_addblacknum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="电话拦截"
+            android:id="@+id/rb_addblacknum_1"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="短信拦截"
+            android:id="@+id/rb_addblacknum_2" />
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="全部拦截"
+            android:id="@+id/rb_addblacknum_3" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:text="确定"
+            android:id="@+id/btn_addblacknum_ok"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_addblacknum_cancle"
+            android:text="取消"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

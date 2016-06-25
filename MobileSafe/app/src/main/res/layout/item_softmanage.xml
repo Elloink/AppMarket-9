@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_softmanage_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/netmanager" />
+
+    <TextView
+        android:id="@+id/item_softmanage_appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/item_softmanage_icon"
+        android:text="手机卫士"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/item_softmanage_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_softmanage_appname"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#880033"
+        android:layout_toRightOf="@id/item_softmanage_icon"
+        android:text="手机内存"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/item_softmanage_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_softmanage_appname"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="#880033"
+        android:layout_toRightOf="@id/item_softmanage_location"
+        android:text="3.1.3"
+        android:ems="3"
+        android:textSize="20sp" />
+    <ImageView
+        android:id="@+id/iv_item_softmanage_lock"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@android:drawable/ic_lock_idle_charging"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"/>
+</RelativeLayout>

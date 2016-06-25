@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.mapleaf.mobilesafe.ShaDuActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8866ff00"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="手机杀毒"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_margin="15dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_scanner_malware" />
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/act_scanning_03"
+            android:id="@+id/iv_shadu_scanner"/>
+        <TextView
+            android:id="@+id/tv_shadu_zhengzaishadu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正在杀毒"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/iv_shadu_scanner"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"/>
+        <ProgressBar
+            android:id="@+id/pb_shadu"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_shadu_zhengzaishadu"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:progressDrawable="@drawable/progressbar_layerlist_shadu"
+            android:layout_toRightOf="@id/iv_shadu_scanner"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/ll_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+</LinearLayout>
