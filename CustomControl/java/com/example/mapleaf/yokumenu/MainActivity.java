@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ViewPager viewPager;
     private List<Ad> list = new ArrayList<>();
     private LinearLayout ll_dot;
+    private ImageView iv_reflesh;
+    private ImageView iv_slideMenu;
 
     private TextView tv_pager;
     private Handler handler = new Handler(){
@@ -46,12 +48,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         iv_home.setOnClickListener(this);
         rl_2 = (RelativeLayout) findViewById(R.id.rl_2);
         rl_3 = (RelativeLayout) findViewById(R.id.rl_3);
-
+        iv_reflesh = (ImageView) findViewById(R.id.iv_reflesh);
+        iv_reflesh.setOnClickListener(this);
         iv_menu = (ImageView) findViewById(R.id.iv_menu);
         iv_menu.setOnClickListener(this);
         viewPager = (ViewPager) findViewById(R.id.vp_image);
         ll_dot = (LinearLayout) findViewById(R.id.ll_dot);
         tv_pager = (TextView) findViewById(R.id.tv_pager);
+        iv_slideMenu = (ImageView) findViewById(R.id.iv_slideMenu);
+        iv_slideMenu.setOnClickListener(this);
 
         list.add(new Ad(R.drawable.a,"新垣结衣最美，美不胜收！"));
         list.add(new Ad(R.drawable.b,"新垣结衣最美，美不胜收！！"));
@@ -150,6 +155,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AnimUtil.show(rl_3);
                 }
                 isShow3 = !isShow3;
+                break;
+            case R.id.iv_reflesh:
+                startActivity(new Intent(this,RefleshActivity.class));
+                break;
+            case R.id.iv_slideMenu:
+                startActivity(new Intent(this,SlideMenuActivity.class));
                 break;
         }
     }

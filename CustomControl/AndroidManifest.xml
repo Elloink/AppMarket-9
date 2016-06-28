@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SearchActivity" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".RefleshActivity" />
+        <activity android:name=".SlideMenuActivity"></activity>
     </application>
 
 </manifest>

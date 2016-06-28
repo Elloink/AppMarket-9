@@ -39,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -88,5 +89,19 @@
         android:layout_width="310dp"
         android:layout_height="155dp"
         android:background="@drawable/level3"
-        ></RelativeLayout>
+        >
+        <ImageView
+            android:id="@+id/iv_reflesh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/channel2"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/iv_slideMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/channel3"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"/>
+    </RelativeLayout>
 </RelativeLayout>
