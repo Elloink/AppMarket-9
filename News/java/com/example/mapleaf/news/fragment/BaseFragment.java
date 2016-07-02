@@ -8,12 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.xutils.x;
+
 
 public abstract class BaseFragment extends Fragment {
     public Activity activity;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        x.view().inject(getActivity());
         activity = getActivity();
     }
 

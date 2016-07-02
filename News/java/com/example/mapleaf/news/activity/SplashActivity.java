@@ -14,12 +14,16 @@ import android.widget.RelativeLayout;
 import com.example.mapleaf.news.R;
 import com.example.mapleaf.news.utils.PrefUtil;
 
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
+
 public class SplashActivity extends Activity {
 
     private RelativeLayout rl_splash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        x.view().inject(this);
         setContentView(R.layout.activity_splash);
         init();
         addAnim();
