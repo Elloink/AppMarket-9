@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mapleaf.news"
-        minSdkVersion 17
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -27,4 +27,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile files('libs/gson-2.3.1.jar')
     compile 'com.android.support:support-v4:24.0.0'
+    compile files('libs/ViewPagerIndicator.jar')
 }
