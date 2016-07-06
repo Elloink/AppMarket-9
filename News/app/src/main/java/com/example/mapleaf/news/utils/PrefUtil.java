@@ -16,4 +16,13 @@ public class PrefUtil {
         boolean bool = sp.getBoolean(key, flag);
         return bool;
     }
+    public static void setStringPref(Context context,String key,String flag){
+        SharedPreferences sp = context.getSharedPreferences("config", context.MODE_PRIVATE);
+        sp.edit().putString(key,flag).commit();
+    }
+    public static String getStringPref(Context context,String key,String flag){
+        SharedPreferences sp = context.getSharedPreferences("config", context.MODE_PRIVATE);
+        String bool = sp.getString(key, flag);
+        return bool;
+    }
 }

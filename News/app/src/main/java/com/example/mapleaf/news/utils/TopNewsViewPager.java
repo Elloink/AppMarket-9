@@ -36,18 +36,14 @@ public class TopNewsViewPager extends ViewPager{
                     if(endX>startX){
                         if(getCurrentItem()==0){
                             getParent().requestDisallowInterceptTouchEvent(false);
-
-                        }else if(getCurrentItem()==getAdapter().getCount()-1){
-                            getParent().requestDisallowInterceptTouchEvent(false);
-
-                        }else{
-                            getParent().requestDisallowInterceptTouchEvent(true);
-
                         }
                     }else{
+                        if(getCurrentItem()==getAdapter().getCount()-1)
                         getParent().requestDisallowInterceptTouchEvent(false);
 
                     }
+                }else{
+                    getParent().requestDisallowInterceptTouchEvent(false);
                 }
                 break;
         }
