@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.mapleaf.news.R;
 import com.example.mapleaf.news.bean.PhotoData;
 import com.example.mapleaf.news.utils.Global;
+import com.example.mapleaf.news.utils.MyBitmapUtil;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
@@ -71,21 +72,19 @@ public class DetailPager3 extends BaseDetailPager{
         Gson gson = new Gson();
         PhotoData data = gson.fromJson(arg0, PhotoData.class);
         newsList = data.data.news;
-        System.out.println("+++++++++++++"+newsList.get(0).title);
-        System.out.println("+++++++++++++"+newsList.get(1).title);
-        System.out.println("+++++++++++++"+newsList.get(2).title);
-        System.out.println("+++++++++++++"+newsList.get(3).title);
         if(newsList!=null){
             myAdapter = new mlistviewAdapter();
             lv_phonemenu.setAdapter(myAdapter);
             gv_phonemenu.setAdapter(myAdapter);
         }
     }
-    private ImageOptions options;
+    //private ImageOptions options;
     private class mlistviewAdapter extends BaseAdapter{
+        private MyBitmapUtil bitmapUtil;
         private mlistviewAdapter(){
-            options = new ImageOptions.Builder().setFailureDrawableId(R.drawable.topnews_item_default)
-                    .setLoadingDrawableId(R.drawable.topnews_item_default).build();
+           // options = new ImageOptions.Builder().setFailureDrawableId(R.drawable.topnews_item_default)
+              //      .setLoadingDrawableId(R.drawable.topnews_item_default).build();
+            bitmapUtil = new MyBitmapUtil();
         }
 
         @Override
@@ -117,7 +116,8 @@ public class DetailPager3 extends BaseDetailPager{
             }
             PhotoData.PhotoInfo item = getItem(i);
             viewHolder.tv_phonemenu.setText(item.title);
-            x.image().bind(viewHolder.iv_phonemenu, item.listimage,options);
+            //x.image().bind(viewHolder.iv_phonemenu, item.listimage,options);
+            bitmapUtil.display(viewHolder.iv_phonemenu, item.listimage);
             return view;
         }
     }
