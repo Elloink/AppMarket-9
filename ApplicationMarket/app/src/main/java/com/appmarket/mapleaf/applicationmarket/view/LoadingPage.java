@@ -3,6 +3,7 @@ package com.appmarket.mapleaf.applicationmarket.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.appmarket.mapleaf.applicationmarket.R;
@@ -44,6 +45,13 @@ public abstract class LoadingPage extends FrameLayout{
         }
         if(errView==null){
             errView = UIUtils.inflate(R.layout.error_layout);
+            Button btn_err_retry = (Button) errView.findViewById(R.id.btn_err_retry);
+            btn_err_retry.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    loadData();
+                }
+            });
             addView(errView);
         }
         if(emptyView==null){

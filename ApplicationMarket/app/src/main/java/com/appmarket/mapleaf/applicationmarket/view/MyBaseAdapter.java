@@ -5,7 +5,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
 
+import com.appmarket.mapleaf.applicationmarket.R;
 import com.appmarket.mapleaf.applicationmarket.utils.UIUtils;
+
+import org.xutils.image.ImageOptions;
 
 import java.util.ArrayList;
 
@@ -16,8 +19,11 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter{
     private static final int ITEM_NORMOL = 0;
     private static final int ITEM_MORE = 1;
     private ArrayList<T> list;
+    protected ImageOptions options;
     public MyBaseAdapter(ArrayList<T> list){
         this.list = list;
+        options = new ImageOptions.Builder().setFailureDrawableId(R.drawable.ic_default)
+                .setLoadingDrawableId(R.drawable.ic_default).build();
     }
     @Override
     public int getCount() {
@@ -113,4 +119,7 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter{
 
     }
     public abstract ArrayList<T> loadMore();
+    public int getListsize(){
+        return list.size();
+    }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@drawable/selector_appitem_bg"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+        <com.appmarket.mapleaf.applicationmarket.view.RatioLayout
+            app:ratio="2.43"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_sub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/subject_default"/>
+        </com.appmarket.mapleaf.applicationmarket.view.RatioLayout>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/tv_sub"
+            android:textSize="22sp"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="巴拉巴拉小魔仙"/>
+    </LinearLayout>
+
+</LinearLayout>
