@@ -32,7 +32,7 @@ public class Fragment4 extends BaseFragment{
         listView.setSelector(new ColorDrawable());
         listView.setAdapter(new MyBaseAdapter<SubjectInfo>(infoList) {
             @Override
-            public MyBaseHolder getHolder() {
+            public MyBaseHolder getHolder(int position) {
                 return new MyBaseHolder<SubjectInfo>(){
                     private TextView tv_sub;
                     private ImageView iv_sub;

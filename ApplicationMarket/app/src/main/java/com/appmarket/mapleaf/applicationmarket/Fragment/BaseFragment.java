@@ -18,11 +18,11 @@ import java.util.ArrayList;
  */
 public abstract class BaseFragment extends Fragment{
     private LoadingPage loadingPage;
-    public ArrayList<AppInfo> infosList;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        infosList = new ArrayList<>();
+
     }
 
     @Nullable

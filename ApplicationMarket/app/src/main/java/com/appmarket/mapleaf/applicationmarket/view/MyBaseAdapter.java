@@ -16,15 +16,19 @@ import java.util.ArrayList;
  * Created by Mapleaf on 2016/7/9.
  */
 public abstract class MyBaseAdapter<T> extends BaseAdapter{
-    private static final int ITEM_NORMOL = 0;
-    private static final int ITEM_MORE = 1;
-    private ArrayList<T> list;
+    protected static final int ITEM_MORE = 0;
+    protected static final int ITEM_NORMOL = 1;
+    protected static final int ITEM_TITLE = 2;
+    protected ArrayList<T> list;
     protected ImageOptions options;
     public MyBaseAdapter(ArrayList<T> list){
         this.list = list;
         options = new ImageOptions.Builder().setFailureDrawableId(R.drawable.ic_default)
                 .setLoadingDrawableId(R.drawable.ic_default).build();
     }
+
+
+
     @Override
     public int getCount() {
         return list.size()+1;
@@ -45,10 +49,10 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter{
         if(position==getCount()-1){
             return ITEM_MORE;
         }else{
-            return getInnerType();
+            return getInnerType(position);
         }
     }
-    public int getInnerType(){
+    public int getInnerType(int position){
         return ITEM_NORMOL;
     }
 
@@ -61,15 +65,15 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter{
     public View getView(int i, View view, ViewGroup viewGroup) {
         MyBaseHolder holder;
         if(view ==null){
-            if(getItemViewType(i)==ITEM_NORMOL){
-                holder = getHolder();
+            if(getItemViewType(i)!=ITEM_MORE){
+                holder = getHolder(i);
             }else{
                 holder = new MoreHolder(hasMore());
             }
         }else{
             holder = (MyBaseHolder) view.getTag();
         }
-        if(getItemViewType(i)==ITEM_NORMOL){
+        if(getItemViewType(i)!=ITEM_MORE){
             holder.setData(getItem(i));
         }else{
             MoreHolder moreHolder = (MoreHolder) holder;
@@ -80,7 +84,7 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter{
         }
         return holder.getRootView();
     }
-    public abstract MyBaseHolder getHolder();
+    public abstract MyBaseHolder getHolder(int position);
     public boolean hasMore(){
         return true;
     }

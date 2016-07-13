@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * Created by Mapleaf on 2016/7/10.
  */
 public class Protocol1 extends BaseProtocol<ArrayList<AppInfo>>{
+    private ArrayList<String> pictures;
 
     @Override
     public String getParams() {
@@ -50,13 +51,13 @@ public class Protocol1 extends BaseProtocol<ArrayList<AppInfo>>{
                 appInfoList.add(info);
             }
 
-//            // 初始化轮播条的数据
-//            JSONArray ja1 = jo.getJSONArray("picture");
-//            ArrayList<String> pictures = new ArrayList<String>();
-//            for (int i = 0; i < ja1.length(); i++) {
-//                String pic = ja1.getString(i);
-//                pictures.add(pic);
-//            }
+            // 初始化轮播条的数据
+            JSONArray ja1 = jo.getJSONArray("picture");
+            pictures = new ArrayList<>();
+            for (int i = 0; i < ja1.length(); i++) {
+                String pic = ja1.getString(i);
+                pictures.add(pic);
+            }
 
 
 
@@ -67,5 +68,8 @@ public class Protocol1 extends BaseProtocol<ArrayList<AppInfo>>{
         for(int i =0;i<appInfoList.size();i++){
             applist.add(appInfoList.get(i));
         }
+    }
+    public ArrayList<String> getPicArr(){
+        return pictures;
     }
 }
