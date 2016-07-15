@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.appmarket.mapleaf.applicationmarket.R;
+import com.appmarket.mapleaf.applicationmarket.manage.ThreadManager;
 import com.appmarket.mapleaf.applicationmarket.utils.UIUtils;
 
 /**
@@ -79,10 +80,23 @@ public abstract class LoadingPage extends FrameLayout{
     public void loadData(){
         if(curState!=STATER_LOADING){
             curState=STATER_LOADING;
-            new Thread(){
+//            new Thread(){
+//                @Override
+//                public void run() {
+//                    super.run();
+//                    int resultState = onLoad();
+//                    curState=resultState;
+//                    UIUtils.runOnMainThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            showPage();
+//                        }
+//                    });
+//                }
+//            }.start();
+            ThreadManager.getThreadPool().execute(new Runnable() {
                 @Override
                 public void run() {
-                    super.run();
                     int resultState = onLoad();
                     curState=resultState;
                     UIUtils.runOnMainThread(new Runnable() {
@@ -92,7 +106,7 @@ public abstract class LoadingPage extends FrameLayout{
                         }
                     });
                 }
-            }.start();
+            });
         }
 
     }

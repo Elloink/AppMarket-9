@@ -10,4 +10,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:background="@drawable/selector_appitem_bg"></FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_appitem2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/selector_appitem_bg"></FrameLayout>
 </LinearLayout>
