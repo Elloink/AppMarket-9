@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.appmarket.mapleaf.appmarket.activity.LeadActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+    <Button
+        android:id="@+id/btn_guide"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="460dp"
+        android:text="开始体验"
+        android:onClick="click"
+        android:textColor="@drawable/selector_btn_textcolor"
+        android:background="@drawable/selector_btn_guide"
+        android:visibility="invisible"
+        android:textSize="18sp"
+        />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_guide"
+        android:layout_centerHorizontal="true"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/shape_point"
+                android:layout_marginRight="12dp"/>
+
+            <View
+                android:id="@+id/grayPoint"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/shape_point"/>
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/shape_point"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/redPoint"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/shape_point_red"
+            android:layout_marginRight="12dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>
